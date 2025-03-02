@@ -1,3 +1,87 @@
+#soal 1
+#gambar 4.1
+masukan = input("Masukan Pembelian: ")
+try:
+    pembelian = int(masukan)
+    if pembelian >= 100000:
+        print(True)
+    else: 
+        print(False)
+except:
+    print("Input Pembelian Harus Angka")
+#gambar 4.2
+masukan = input("Masukan Usia: ")
+try:
+    usia = int(masukan)
+    if usia < 0:
+        print("Usia harus lebih dari 0")
+    elif usia < 6:
+        print("Anda Balita")
+    elif usia < 13:
+        print("Anda Anak-anak")
+    elif usia < 19:
+        print("Anda Remaja")
+    elif usia < 51:
+        print("Anda Dewasa")
+    else:
+        print("Anda Lansia")
+except:
+    print("Input Usia Harus Angka")
+#gambar 4.3
+def tentukan_kategori_usia(usia):
+    if 0 <= usia <= 5: 
+        return "Balita"     
+    elif 6 <= usia <= 11:        
+        return "Kanak-kanak"     
+    elif 12 <= usia <= 25: 
+        return "Remaja"     
+    elif 26 <= usia <= 45:         
+        return "Dewasa"     
+    elif usia > 45:         
+        return "Lansia"     
+    else:
+        return None 
+ 
+def main(): 
+usia_input = input("Masukkan usia Anda: ")
+if not usia_input.isdigit(): 
+    print("Input tidak valid! Masukkan angka yang benar.")         
+return 
+     
+usia = int(usia_input) 
+     
+kategori = tentukan_kategori_usia(usia) 
+     
+if kategori: 
+    print(f"Anda termasuk kategori: {kategori}")     
+else: 
+    print("Usia tidak valid. Masukkan angka yang benar.") 
+     
+if __name__ == "__main__": 
+main() 
+
+#soal 2
+def hitung_diskon(nominal): 
+    return 30 if nominal >= 1000000 else 20 if nominal > 500000 else 15 if nominal >= 100000 else 0 
+ 
+def main(): 
+    pembelian = input("Masukkan total pembelian (Rp): ") 
+     
+    if not pembelian.replace('.', '', 1).isdigit(): 
+        print("Input tidak valid! Masukkan angka yang benar.")         return 
+     
+    pembelian = float(pembelian) 
+     
+    if pembelian < 0: 
+        print("Nilai pembelian tidak boleh negatif. Silakan coba lagi.")         return 
+     
+    diskon = hitung_diskon(pembelian)     total_diskon = pembelian * diskon / 100     total_bayar = pembelian - total_diskon 
+     
+    print(f"Diskon: {diskon}%")     print(f"Potongan Harga: Rp {total_diskon:.2f}")     print(f"Total yang harus dibayar: Rp {total_bayar:.2f}") 
+     
+if __name__ == "__main__":
+main(). 
+
 #soal 3
 def jumlah_hari(bulan):
     hari_per_bulan = {
