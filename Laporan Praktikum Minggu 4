@@ -61,26 +61,19 @@ if __name__ == "__main__":
 main() 
 
 #soal 2
-def hitung_diskon(nominal): 
-    return 30 if nominal >= 1000000 else 20 if nominal > 500000 else 15 if nominal >= 100000 else 0 
- 
-def main(): 
-    pembelian = input("Masukkan total pembelian (Rp): ") 
-     
-    if not pembelian.replace('.', '', 1).isdigit(): 
-        print("Input tidak valid! Masukkan angka yang benar.")         return 
-     
-    pembelian = float(pembelian) 
-     
-    if pembelian < 0: 
-        print("Nilai pembelian tidak boleh negatif. Silakan coba lagi.")         return 
-     
-    diskon = hitung_diskon(pembelian)     total_diskon = pembelian * diskon / 100     total_bayar = pembelian - total_diskon 
-     
-    print(f"Diskon: {diskon}%")     print(f"Potongan Harga: Rp {total_diskon:.2f}")     print(f"Total yang harus dibayar: Rp {total_bayar:.2f}") 
-     
-if __name__ == "__main__":
-main(). 
+masukan = input("Masukan Usia: ")
+try:
+    usia = int(masukan)
+    hasil = "Usia harus lebih dari 0" if usia < 0 else (
+    "Anda Balita" if usia < 6 else (
+    "Anda Anak-anak" if usia < 13 else (
+    "Anda Remaja" if usia < 19 else (
+    "Anda Dewasa" if usia < 51 else "Anda Lansia"
+    ))))
+    print(hasil)
+except:
+    print("Input Usia Harus Angka")
+
 
 #soal 3
 def jumlah_hari(bulan):
